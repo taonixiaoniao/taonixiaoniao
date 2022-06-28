@@ -1,0 +1,36 @@
+1、useState()：
+	useState()提供了将 状态 和 更改状态 联系起来的途径
+	语法：const [state,setstate] = useState(initialState);
+	返回一个 state，以及更新 state 的函数。
+
+	在初始渲染期间，返回的状态 (state) 与传入的第一个参数 (initialState) 值相同。
+	setState 函数用于更新 state。它接收一个新的 state 值并将组件的一次重新渲染加入队列。
+	initialState是state的初始值，setState(newState)是一个可以响应式更改state的函数，newState是新的值;
+
+	eg:
+	const [name,setName] = useState('yzx');
+	setName('杨执信')
+
+	注意
+
+	React 会确保 setState 函数的标识是稳定的，并且不会在组件重新渲染时发生变化。这就是为什么可以安全地从 useEffect 或 useCallback 
+	的依赖列表中省略 setState。
+	与 class 组件中的 setState 方法不同，useState 不会自动合并更新对象。可以用函数式的 setState 结合展开运算符来达到合并更新对象的效果。
+
+	惰性初始 state
+	initialState 参数只会在组件的初始渲染中起作用，后续渲染时会被忽略。如果初始 state 需要通过复杂计算获得，
+	则可以传入一个函数，在函数中计算并返回初始的 state，此函数只在初始渲染时被调用：
+
+	const [state, setState] = useState(() => {
+  		const initialState = someExpensiveComputation(props);
+ 	 	return initialState;
+	});
+
+	跳过 state 更新
+	调用 State Hook 的更新函数并传入当前的 state 时，React 将跳过子组件的渲染及 effect 的执行。(React 使用 Object.is 比较算法 来比较 state）
+
+	需要注意的是，React 可能仍需要在跳过渲染前渲染该组件。不过由于 React 不会对组件树的“深层”节点进行不必要的渲染，所以大可不必担心。
+	如果你在渲染期间执行了高开销的计算，则可以使用 useMemo 来进行优化。
+
+
+

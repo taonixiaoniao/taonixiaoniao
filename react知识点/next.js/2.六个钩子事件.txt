@@ -1,0 +1,15 @@
+1、routeChangeStart：路由开始变化
+2、routerChangeComplete：路由变化结束
+3、beforeHistoryChange：history路由开始变化，在routerChangeComplete之前执行
+4、routeChangeError：路由发生错误
+	注意404不算是路由发生错误，必须是服务器抛出的错误日志才可以
+5、hashChangeStart：哈西路由开始变化
+6、hashChangeComplete：哈希路由变化结束
+
+钩子事件类似于生命周期，在路由跳转变化的时候可以在钩子事件中插入一些需要的操作
+eg：
+Router.events.on('routeChangeStart', (...args) => {
+    console.log(1);
+})
+
+

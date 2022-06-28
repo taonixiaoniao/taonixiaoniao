@@ -1,0 +1,21 @@
+1、遇到错误： verbose stack Error: Object for dependency "@babel/core" is empty.
+	解决方案：删除package-lock-json文件，重新npm i 初始化node项目，这样@babel/core依赖就重新生成了
+2、安装axios: npm i axios
+4、四种安装语句的区别：
+	npm i 1. 安装模块到项目 node_modules 目录下；不会将模块依赖写入 devDependencies 或 dependencies 节点；运行 npm install 
+		初始化项目时不会下载模块。
+	npm i -g  安装模块到全局，不会在项目 node_modules 目录中保存模块包；不会将模块依赖写入 devDependencies 或 dependencies 节点；
+		 运行 npm install 初始化项目时不会下载模块。
+	npm i --save xxx  安装模块到项目 node_modules 目录下；会将模块依赖写入 dependencies 节点；运行 npm install 初始化项目时，会将模块
+		下载到项目目录下；运行npm install --production 或者注明 NODE_ENV 变量值为 production 时，会自动下载模块到 
+		node_modules 目录中。
+	npm i --save-dev xxx dev  安装模块到项目 node_modules 目录下；会将模块依赖写入 dependencies 节点；运行 npm install 初始化项目时，
+		会将模块下载到项目目录下；运行npm install --production 或者注明 NODE_ENV 变量值为 production 时，不会自动下载模块到
+		node_modules 目录中。
+	总结：devDependencies 节点下的模块是我们在开发时需要用的，比如项目中使用的 gulp ，压缩 css、js 的模块。这些模块在我们的项目部署后
+	是不需要的，所以我们可以使用 --save-dev 的形式安装。像 express 这些模块是项目运行必备的，应该安装在 dependencies 节点下，所以我们
+	应该使用 --save 的形式安装。
+	
+5、在哪个生命周期中请求数据比较好：
+	componentDidMount() 会在组件挂载后（插入 DOM 树中）立即调用。依赖于 DOM 节点的初始化应该放在这里。
+	如需通过网络请求获取数据，此处是实例化请求的好地方。

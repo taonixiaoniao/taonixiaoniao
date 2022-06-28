@@ -1,0 +1,11 @@
+next给我们提供了自定义网页标签的方法，即自定义head
+
+1、一般情况下，每个页面都应该放置一个head
+先引入Head
+import Head from 'next/head'
+ <Head>
+           <title>冰岛只有一张牌</title>
+           <meta charSet="utf-8" />
+</Head>
+
+2、如果要全局使用一个head，可以把head封装成一个组件

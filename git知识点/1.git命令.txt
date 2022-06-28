@@ -1,0 +1,40 @@
+1、git init
+	初始化本地仓库
+2、git add 文件名：
+	把文件上传到本地仓库
+3、git commit -m '注释'：
+	把本地仓库文件上传
+4、git reflog：
+	找回丢失的提交记录
+5、git log --oneline：
+	查找近期提交记录
+6、git reset：
+	回退版本，可以指定退回某一次提交的版本
+	git reset HEAD^ 回退所有内容到上一个版本
+	git reset HEAD^ hello.php 回退 hello.php 文件的版本到上一个版本
+	git reset 052e 回退到指定版本
+	git reset --soft HEAD~3回退到上上上个版本
+	git reset --hard HEAD~3回退到上上上个版本
+	git reset --hard bae128(提交信息的头部)回退到某个版本回退点之前的所有信息
+	git reset --hard origin/master将本地的状态回退到远程一样
+	HEAD(HEAD~0)表示当前版本
+	HEAD^(HEAD~1)上个版本
+	HEAD^^(HEAD~2)上上个版本
+7、git ls-files：
+	查看本地仓库已经存放的文件
+8、git pull origin master：
+	更新本地仓库
+9、git push --force origin master：
+	将本地仓库强制推送到远程仓库
+10、git remote -v：
+	查看本地仓库与远程仓库的连接
+11、git remote add origin '地址'：
+	与远程仓库建立连接
+13、 git push -f origin master：
+	强制推送
+14、git checkout -b testing：
+	切换到一个分支，如果没有则创建这个分支
+15、git merge：
+	合并分支，把测试分支合并到主分支
+	eg: git merge testing
+14、git remote add upstream：关联上游项目

@@ -1,0 +1,67 @@
+数组方法：
+	迭代方法：forEach()、map()、filter、some()、every();
+1、forEach()：
+	array.forEach(function(currentValue, index, arr))
+	currentValue：数组当前项的值
+	index：数组当前的索引
+	arr：数组对象本身
+	注意：在forEach中写return不会终止迭代
+2、filter()：
+	array.filter(function(currentValue,index,arr))
+	filter()方法创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素，主要用于筛选数组
+	该方法返回的是一个新数组
+	currentValue：数组当前项的值
+	index：数组当前项的索引
+	arr：数组对象本身
+	注意：在filter中写return不会终止迭代
+3、some()：
+	some(function(currentValue, index, arr))
+	some()方法用于检测数组中的元素是否满足指定条件，通俗点就是查找数组中是否有满足条件的元素
+	这个方法返回的是布尔值，如果查找到这个元素就返回true，否则返回false
+	如果找到第一个满足条件的元素就终止循环，不继续查找
+	currentValue：数组当前项的值
+	index：数组当前项的索引
+	arr：数组对象本身
+	filter也是查找满足条件的元素，返回的是一个数组，而且是把所有满足条件的元素返回回来
+	some也是查找满足元素是否存在，返回的是一个布尔值，查找到第一个满足条件的元素就终止循环
+4、map()：
+	arr.map(function callback(currentValue[, index[, array]]){
+
+	}[, thisAge])
+	currentValue：callback数组正在处理的当前元素
+	index：callback数组正在处理的当前元素的索引
+	array：map方法调用的数组
+	thisAge：执行callback函数是值被当做this
+	map方法会给原数组中每个元素调用一次callback函数。callback每次执行后的返回值形成一个新数组。callback函数只会在有值
+	的索引上被调用。
+5、every()：
+	arr.every(callback(element[, index[, array]])[, thisArg])
+	callvack：用来测试每个元素的函数，它可以接收三个参数：	
+		element：用于测试当前值
+		index：用于测试当前值的索引
+		array：调用every的当前数组
+		thisAge：执行callback时使用的this值
+	every()可以判断数组中是否所有的元素都符合条件，返回的是布尔值。
+6、tirm():
+	tirm()方法从一个字符串的两端删除空白字符
+	str.tirm()
+	trim()方法并不影响字符串本身，它返回的是一个新的字符串。
+7、Object.defineProperty()定义对象中新增属性或修改原有的属性。
+	obj.defineProperty(obj, prop, descriptor)
+	obj：必需，目标对象。
+	prop：必需，需定义或修改的属性的名字。
+	descriptor：必需，目标属性所拥有的特性。
+	descriptor参数以{ }的形式书写：
+		value：设置属性的值，默认为undefined
+		writable：值是否可以重写，true|false，默认为false
+		enumerable：目标值是否可以被枚举(遍历，设置为false可以隐藏属性，可以看到但不能读取)，true|false默认为false
+		configurable：目标属性是否可以被删除或者是否可以被再次修改特性true|false，默认为false
+8、Object.keys()：
+	Object.keys(obj)
+	枚举obj中所有可以枚举的属性，返回值是一个包含obj所有可枚举属性的数组
+9、Object.value():
+	Object.value(obj)
+	枚举obj中所有可枚举属性的值，返回值是一个包含obj所有可枚举属性值得数组
+
+
+	

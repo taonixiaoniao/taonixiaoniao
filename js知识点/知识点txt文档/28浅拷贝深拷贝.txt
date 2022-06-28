@@ -1,0 +1,32 @@
+1、浅拷贝只是拷贝一层，更深层次对象级别的只拷贝引用，不会开辟新的内存空间，当改变拷贝对象的数据时，原数据也会被更改。
+2、深拷贝拷贝多层，每一级别的数据都会拷贝，会开辟新的内存空间，当拷贝对象发生改变，只改变新开辟内存空间的数据，原数据不受影响。
+3、浅拷贝的方法：
+	（1）for in方法浅拷贝：var obj = {
+            				id: 1,
+            				name: "andy"
+        				}
+       			 var o = {};
+        			for (let k in obj){
+            			// k 是属性名；obj[k]是属性值
+            			o[k] = obj[k]
+        			}
+		把obj中的每一项都for in遍历出来然后赋值给o
+	（2）Object.assign(o, obj)：可以直接把obj浅拷贝给对象o
+		Object.assign(o, obj)
+4、深拷贝方法：
+	利用递归函数，如果拷贝的是某个数据是复杂数据类型，则开辟新的内存空间，而不是引用地址
+	function copy(newObj, oldObj) {
+            		for (let k in oldObj) {
+                		item = oldObj[k]
+                		if (item instanceof Array) {
+                    			newObj[k] = [];
+                    			copy(newObj[k], item)
+                		} else if (item instanceof Object) {
+                    			newObj[k] = {};
+                    			copy(newObj[k], item)
+                		} else {
+                    			newObj[k] = item
+                		}
+            		}
+            		return o
+        	}

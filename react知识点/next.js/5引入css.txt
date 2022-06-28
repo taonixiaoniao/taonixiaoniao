@@ -1,0 +1,17 @@
+next.js默认无法引入.css文件，只能通过以下方式写入样式
+<h2>杨执信</h2>
+            <style jsx>
+                {`
+                    h2{color:${color}}
+                    a{color:green;font-size:${size}}
+                `}
+            </style>
+
+这样不方便，还是需要模块化引入css文件
+需要安装 npm i @zeit/next-css
+再在项目根目录下的next.config.js中加入配置
+const withCss = require('@zwit/next-css')
+module.exports = withCss({})
+
+以上是老版本的做法，新版本不需要更改配置文件，只需要在_app.js文件中直接引入css文件，next.js会直接帮我们渲染样式
+

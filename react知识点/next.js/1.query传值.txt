@@ -1,0 +1,14 @@
+1、使用next.js之后就只能使用query传值，需要引入
+	import Router from 'next/router'
+2、三种页面跳转方式
+<Link href="/xiaojiejie?name=伞兵一号"><a>伞兵一号</a></Link>
+<Link href={{pathname:'/xiaojiejie',query:{name:'伞兵二号'}}}><a>伞兵二号</a></Link>
+
+<button onClick={gotoXjj}>选择伞兵二号</button>
+  const gotoXjj = () => {
+    // Router.push('/xiaojiejie?name=伞兵二号')
+    Router.push({
+      pathname: "/xiaojiejie",
+      query:{name:'伞兵二号'}
+    })
+  }

@@ -1,0 +1,12 @@
+1、jQuery:
+	jQuery 是一个快速、小型且功能丰富的 JavaScript 库。它使像HTML文档横穿和操作，事件处理，动画和Ajax的东西简单得多，一个
+	易于使用的API，在众多的浏览器上工作。结合多功能性和可扩展性，jQuery 改变了数百万人编写 JavaScript 的方式。
+2、jQuery是一个JS函数库，包含以下特性
+	HTML 元素选取
+	HTML 元素操作
+	CSS 操作
+	HTML 事件函数
+	JavaScript 特效和动画
+	HTML DOM 遍历和修改
+	AJAX
+	Utilities

@@ -1,0 +1,22 @@
+getInitialProps是next.js环境下中获取数据的方式
+
+以下是请求axios请求json数据的案例
+Xiaojiejie.getInitialProps = async () => {
+    const promise = new Promise((resolve, reject) => {
+        axios('https://www.fastmock.site/mock/581c90a7cd639f27bb8681099f7dbed0/react-demo01/api-web')
+            .then(
+                (res) => {
+                    console.log('数据请求成功' + res.data);
+                    resolve(res.data)
+                }
+            )
+            .catch(
+                (err) => {
+                    console.log(err + '数据请求失败');
+                    reject(err)
+                }
+            )
+    })
+
+    return await promise
+}

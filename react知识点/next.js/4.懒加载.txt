@@ -1,0 +1,12 @@
+有些全局引入的第三方库或自定义组件会比较耗性能，这时候就需要懒加载，即异步引入第三方库,在渲染到使用这些库或者组件的地方才会引入
+
+1、第三方库的懒加载
+下面是引入common.js库的优化案例
+const changeTime = async () => {
+        const moment = await import('moment')
+        setTime(moment.default(Date.now()).format())
+    }
+
+2、如果要优化自定义的组件引入，则需要使用next.js官方提供的dynamic
+import dynamic from 'next/dynamic'
+const Component = dynamic(import('./components/Component'))

@@ -1,0 +1,41 @@
+1、函数的定义方式：
+	(1)：自定义函数(命名函数)
+		function fn() {};
+	(2)：函数表达式(匿名函数)
+		var fun = function() {};
+	(3)：构造函数创建函数
+		const fun = new Function('参数1', '参数2', '函数体')
+
+2、利用构造函数创建函数：
+	const fun =new Function('参数1','参数2','函数体');
+	参数和函数体一定要用引号引起来。
+	所有的函数都是Function的一个实例
+3、函数的调用方式和this指向：
+	（1）普通函数 this指向window
+		function fn() {
+            		console.log('伞兵一号卢本伟准备就绪');
+        		 }
+         		fn();
+		或者
+         		fn.call();
+	（2）对象的方法 this指向该对象
+		const o = {
+            			Say: function() {
+               	 			console.log('人生巅峰');
+            			}
+        		};
+        		o.Say();
+	（3）构造函数 this指向实例对象 原型对象上的this也指向实例对象
+		function Star() {};
+        		Star.prototype.sing = function() {};
+        		let ldh = new Star();
+	（4）绑定事件函数 指向函数的调用者，即btn这个按钮对象
+		btn.onclick = function() {};
+	（5）定时器函数 this指向window
+		setInterval(() => {
+            			console.log('伞兵');
+        		}, 1000);
+	（6）立即执行函数 this指向window
+		(function() {
+            			console.log('自信即巅峰');
+        		})()

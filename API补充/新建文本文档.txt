@@ -1,0 +1,33 @@
+1、document.querySelector():
+	文档对象Document引用的querySlector()方法返回文档中与指定选择器或选择器组匹配的第一个HTMLElement对象。如果找不到匹配项
+	就返回null。
+	例如：var tbody = document.querySelector('tbody');
+2、addEventListener():
+	将实现EventListener的函数或者对象添加到调用它的EventTarget上的指定事件类型的事件监听器列表中
+	也就是给一个元素绑定一个点击事件。
+	search_price.addEventListener('click', function(){})
+3、document.createElement():
+	该方法用于创建一个由标签名称tagNmae指定的HTML元素。如果用户代理无法识别tagName，则会生成一个未知HTML元素 
+	HTMLUnknownElement。
+	var tr = document.createElement('tr');
+4、Element.innerHTML:
+	设置或者获取HTML中某个元素的子元素
+	tr.innerHTML =
+                `<td>${value.id}</td>
+            <td>${value.pname}</td>
+            <td>${value.price}</td>`	这里给tr标签设置了三个td子元素
+5、appendChild():
+	将一个节点附加到指定父节点的子节点列表的末尾处。如果将被插入的节点已经存在于当前文档的文档树中，那么 appendChild() 只会将
+	它从原先的位置移动到新的位置（不需要事先移除要移动的节点）。
+	 tr.innerHTML =
+                `<td>${value.id}</td>
+            <td>${value.pname}</td>
+            <td>${value.price}</td>`
+            tbody.appendChild(tr)	这里将4例子中的td元素每次都添加在最末尾	
+6、window.onload
+	window.onload() 方法用于在网页加载完毕后立刻执行的操作，即当 HTML 文档加载完毕后，立刻执行某个方法。
+	window.onload() 通常用于 <body> 元素，在页面完全载入后(包括图片、css文件等等)执行脚本代码。
+7、oncase、onblur
+	oncase：发生在对象获取焦点时
+	onblur：发生在对象失去焦点时
+	

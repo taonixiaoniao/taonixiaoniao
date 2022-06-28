@@ -1,0 +1,25 @@
+JS为我们专门提供了一些函数方法来帮我们更优雅地处理函数内部this的指向问题，常用的有bind(),call(),apply()三种方法
+
+1、call()方法
+	call()方法可以调用一个函数，也可以改变this指向，它最主要的作用是实现继承
+	fun.call(thisArg, arg1, arg2,...)
+	thisArg：在fun函数运行时指定的this值
+	arg：传递的值
+	返回值就是函数的值
+2、apply()方法
+	apply()方法调用一个函数。简单理解为调用函数的方式，它也能改变函数的this指向
+	fun.apply(thisArg, [argArray])
+	thisArg：在fun函数运行时指定的this值
+	argsArray：传递的值，必须包含在数组里面
+	返回值就是函数的返回值
+	apply的主要应用 可以借助Math内置对象对数组进行数学操作
+	const arr = [1, 6, 24, 44, 23];
+        	let max = Math.max.apply(Math, arr); 
+        	console.log(max);
+3、bind()方法
+	bind不会调用函数，但是能改变函数内部this指向
+	fun.bind(thisArg, arg1, arg2, ...)
+	thisArg：在fun函数运行时指定的this值
+	arg：传递的其他参数
+	返回值由指定的this值和初始化参数改造的原函数拷贝
+
